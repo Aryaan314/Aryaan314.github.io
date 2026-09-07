@@ -325,6 +325,106 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Keeps blocks hidden until triggered by JS */
+.hidden-block {
+  display: none;
+}
+
+.terminal-row {
+  font-family: monospace;
+  margin-bottom: 8px;
+}
+
+.response-text {
+  font-family: monospace;
+  color: #ffffff;
+  margin-bottom: 16px;
+  padding-left: 12px; /* Indents response code slightly */
+}
+
+/* The Terminal Cursor */
+.terminal-cursor::after {
+  content: "▋"; /* Standard terminal block character */
+  margin-left: 4px;
+  color: #4af626; /* Matches your terminal theme color */
+  animation: blinkCursor 0.6s steps(2, start) infinite;
+}
+
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const line1Text = "whoami";
+  const line2Text = "status --self";
+  const line3Text = "cat about.txt"; // Added back the missing command string
+  
+  let i = 0, j = 0, k = 0;
+
+  // 1. Type out "$ whoami"
+  function typeCommand1() {
+    if (i < line1Text.length) {
+      document.getElementById("cmd-1").innerHTML += line1Text.charAt(i);
+      i++;
+      setTimeout(typeCommand1, 100);
+    } else {
+      document.getElementById("cursor-1").style.display = "none";
+      document.getElementById("response-1").classList.remove("hidden-block");
+      
+      setTimeout(() => {
+        document.getElementById("row-2").classList.remove("hidden-block");
+        typeCommand2();
+      }, 600);
+    }
+  }
+
+  // 2. Type out "$ status --self"
+  function typeCommand2() {
+    if (j < line2Text.length) {
+      document.getElementById("cmd-2").innerHTML += line2Text.charAt(j);
+      j++;
+      setTimeout(typeCommand2, 100);
+    } else {
+      document.getElementById("cursor-2").style.display = "none";
+      document.getElementById("response-2").classList.remove("hidden-block");
+      
+      setTimeout(() => {
+        document.getElementById("row-3").classList.remove("hidden-block");
+        typeCommand3();
+      }, 600);
+    }
+  }
+
+  // 3. Type out "$ cat about.txt"
+  function typeCommand3() {let cmdElement = document.getElementById("cmd-3");// Add the cursor class when typing begins on this line
+    if (k === 0) {
+cmdElement.classList.add("terminal-cursor");
+}  if (k < line3Text.length) {
+cmdElement.innerHTML += line3Text.charAt(k);
+k++;
+setTimeout(typeCommand3, 100);
+} else {
+// Line finishes typing: remove cursor from command line
+cmdElement.classList.remove("terminal-cursor");
+
+// Final response prints out
+let responseElement = document.getElementById("response-3");
+responseElement.classList.remove("hidden-block");
+
+// Keep the cursor blinking permanently at the end of the final response text
+responseElement.classList.add("terminal-cursor");
+}
+}
+
+// Start sequence on load
+setTimeout(typeCommand1, 400);
+});
+</script>
+
 
 </style>
 </head>
@@ -352,8 +452,8 @@
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#certifications">Certifications</a>
-      <a href="#work">Projects</a>
-      <a href="#resume">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
       <a href="#education">Education</a>
       <a href="#clubs">Clubs & Activities</a>
       <a href="#log">Log</a>
@@ -376,16 +476,26 @@
         <span class="terminal-title">aryaan@portfolio</span>
       </div>
       <div class="terminal-body">
-        <div class="line"><span class="prompt">$</span> whoami</div>
-        <div class="line out"><strong>Aryaan Sheikh</strong> — IT Support & Help Desk</div>
-        <div class="line"><span class="prompt">$</span> status --self</div>
-        <div class="line out">Open to entry-level IT Support, Help Desk & Desktop Support roles</div>
-        <div class="line"><span class="prompt">$</span> cat about.txt</div>
-        <div class="line out">BSBA in Information Systems & Technology (UMSL), Google IT Support Certified, and hands-on with Active Directory, networking, and troubleshooting<span class="cursor"></span></div>
-      </div>
+  <!-- Line 1: whoami -->
+  <p class="terminal-row"><span class="prompt">$</span> <span id="cmd-1"></span><span class="active-cursor" id="cursor-1"></span></p>
+  <div id="response-1" class="hidden-block">
+    <p class="response-text">Aryaan Sheikh - IT Support & Help Desk</p>
+  </div>
+  
+  <!-- Line 2: status --self -->
+  <p id="row-2" class="terminal-row hidden-block"><span class="prompt">$</span> <span id="cmd-2"></span><span class="active-cursor" id="cursor-2"></span></p>
+  <div id="response-2" class="hidden-block">
+    <p class="response-text">Open to entry-level IT Support, Help Desk & Desktop Support roles</p>
+  </div>
+
+  <!-- Line 3: cat about.txt -->
+  <p id="row-3" class="terminal-row hidden-block"><span class="prompt">$</span> <span id="cmd-3"></span><span class="active-cursor" id="cursor-3"></span></p>
+  <div id="response-3" class="hidden-block">
+    <p class="response-text">BSBA in Information Systems & Technology (UMSL), Google IT Support Certified, and hands-on with Active Directory, networking, and troubleshooting</p>
+     </div>
     </div>
     <div class="hero-ctas">
-      <a href="#work" class="btn btn-primary">View resolved tickets</a>
+      <a href="#projects" class="btn btn-primary">View resolved tickets</a>
       <a href="#contact" class="btn btn-ghost">Open a ticket</a>
     </div>
   </div>
@@ -470,7 +580,7 @@
   </div>
 
 </section>
-<section id="work">
+<section id="projects">
   <div class="wrap">
     <div class="eyebrow">Resolved tickets</div>
     <h2 class="section-title">Projects</h2>
@@ -498,7 +608,7 @@
   </div>
 </section>
 
-<section id="resume">
+<section id="experience">
   <div class="wrap">
     <div class="resume-head">
       <div>
@@ -526,7 +636,7 @@
           <li>Trained new hires on internal software systems, reducing ramp-up time</li>
         </ul>
       </div>
-      
+    </div>
 </section>
 
 <section id="education">
