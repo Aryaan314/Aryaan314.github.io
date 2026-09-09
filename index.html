@@ -491,7 +491,7 @@ setTimeout(typeCommand1, 400);
   <!-- Line 3: cat about.txt -->
   <p id="row-3" class="terminal-row hidden-block"><span class="prompt">$</span> <span id="cmd-3"></span><span class="active-cursor" id="cursor-3"></span></p>
   <div id="response-3" class="hidden-block">
-    <p class="response-text">BSBA in Information Systems & Technology (UMSL), Google IT Support Certified, and hands-on with Active Directory, networking, and troubleshooting</p>
+    <p class="response-text">BSBA in Information Systems & Technology (UMSL), Google IT Support Certified, and hands-on with Active Directory, ServiceNow (ITSM), Networking, and Enterprise Troubleshooting</p>
      </div>
     </div>
     <div class="hero-ctas">
@@ -508,7 +508,7 @@ setTimeout(typeCommand1, 400);
       <div class="about-text">
         <p class="lead">I like taking "it's just broken" and turning it into an actual answer.</p>
         <p>I'm a recent UMSL graduate (BSBA, Information Systems & Technology) with a Google IT Support Professional Certificate and hands-on development experience from The Cigna Group's NEXT Program, where I helped build a mental health tracking application using React, TypeScript, and GitHub.</p>
-        <p>On the infrastructure side, I've built and administered a Windows Server Active Directory forest from scratch in a home lab — configuring DNS, DHCP, Group Policy, and organizational units — and I'm comfortable across Windows, Linux, and macOS environments. On the people side, years of translating technical and academic concepts for non-technical audiences have made clear explanation second nature.</p>
+        <p>On the infrastructure side, I've built and administered a Windows Server Active Directory forest from scratch in a home lab — configuring DNS, DHCP, and Group Policy. To bridge that system foundation with enterprise operations, I recently deployed an end-to-end ServiceNow ITSM environment, configuring complete ITIL lifecycles across Incident, Problem, and Change Management. On the people side, years of translating technical concepts for non-technical audiences have made clear explanation second nature.</p>
         <p>I'm looking for an entry-level IT Support, Help Desk, or Desktop Support role where I can keep doing both: solving the technical problem and making sure the person on the other end actually understands what happened.</p>
       </div>
       <div class="about-side">
@@ -534,6 +534,13 @@ setTimeout(typeCommand1, 400);
     <div class="eyebrow">System status</div>
     <h2 class="section-title">Skills</h2>
     <div class="skills-grid">
+      <div class="skill-panel">
+        <h3>Enterprise ITSM & Workflows</h3>
+        <div class="skill-row"><span class="skill-name">ServiceNow ITSM</span><span class="skill-level"><span class="lvl-dot lvl-expert"></span>Expert</span></div>
+        <div class="skill-row"><span class="skill-name">ITIL v4</span><span class="skill-level"><span class="lvl-dot lvl-expert"></span>Proficient</span></div>
+        <div class="skill-row"><span class="skill-name">Incident, Problem, Change Management</span><span class="skill-level"><span class="lvl-dot lvl-expert"></span>Expert</span></div>
+        <div class="skill-row"><span class="skill-name">Service Catalog & CMDB</span><span class="skill-level"><span class="lvl-dot lvl-expert"></span>Hands-on</span></div>
+      </div>
       <div class="skill-panel">
         <h3>Support & Operating Systems</h3>
         <div class="skill-row"><span class="skill-name">Windows OS</span><span class="skill-level"><span class="lvl-dot lvl-expert"></span>Expert</span></div>
@@ -587,7 +594,16 @@ setTimeout(typeCommand1, 400);
     <div class="ticket-grid">
 
       <div class="ticket">
-        <div class="ticket-top"><span class="ticket-id">#001</span><span class="tag tag-p1">P1</span></div>
+        <div class="ticket-top"><span class="ticket-id">#001</span><span class="tag tag-p0">P1</span></div>
+        <h3>ServiceNow ITSM Lifecycle Implementation</h3>
+        <span class="ticket-status">✓ RESOLVED</span>
+        <p>Configured an end-to-end enterprise IT service environment inside a ServiceNow Personal Developer Instance (PDI) within an intense 48-hour delivery window. Mapped comprehensive ITIL support lifecycles, structured incident triage streams for Tier 1 and Tier 2 tickets, authored knowledge articles, and documented complex Problem and Change management risk workflows.</p>
+        <div class="ticket-tools"><span class="pill">ServiceNow</span><span class="pill">ITSM</span><span class="pill">Workflows</span><span class="pill">Dashboards</span></div>
+        <a class="ticket-link" href="https://github.com/Aryaan314/ServiceNow-Ticketing-System" target="_blank" rel="noopener">View Documentation →</a>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-top"><span class="ticket-id">#002</span><span class="tag tag-p1">P2</span></div>
         <h3>Active Directory & DHCP home lab</h3>
         <span class="ticket-status">✓ RESOLVED</span>
         <p>Deployed a Windows Server 2022 domain controller, stood up a new Active Directory forest with integrated DNS, and configured a DHCP scope for centralized IP management. Joined a Windows 11 client to the domain, resolving DNS issues along the way, then built and enforced a Group Policy Object restricting user-level access.</p>
@@ -596,12 +612,12 @@ setTimeout(typeCommand1, 400);
       </div>
 
       <div class="ticket">
-        <div class="ticket-top"><span class="ticket-id">#002</span><span class="tag tag-p2">P2</span></div>
+        <div class="ticket-top"><span class="ticket-id">#003</span><span class="tag tag-p2">P3</span></div>
         <h3>Mindwave — mental health tracking app</h3>
         <span class="ticket-status">✓ RESOLVED</span>
         <p>Built as part of The Cigna Group's NEXT Program. Designed and implemented the app's Privacy Policy page in React, TypeScript, and CSS, communicating healthcare data-handling practices clearly, then presented the finished product to Cigna stakeholders.</p>
         <div class="ticket-tools"><span class="pill">React</span><span class="pill">TypeScript</span><span class="pill">Figma</span><span class="pill">GitHub</span></div>
-        <a class="ticket-link" href="http://mindwave-team11-app.s3-website-us-east-1.amazonaws.com/" target="_blank" rel="'noopener">View App →</a>
+        <a class="ticket-link" href="http://mindwave-team11-app.s3-website-us-east-1.amazonaws.com/" target="_blank" rel="noopener">View App →</a>
       </div>
 
     </div>
@@ -683,6 +699,19 @@ setTimeout(typeCommand1, 400);
     <h2 class="section-title">Notes from the field</h2>
 
     <div class="log-entry">
+      <div class="log-meta"><span class="log-version">v1.3</span><span class="log-date">Sep 2026</span></div>
+      <h3>From Zero to ServiceNow: Configuring my first enterprise ticketing platform</h3>
+      <p class="diff-add">What I learned during a 48-hour operational sprint, and why workflows matter just as much as infrastructure code.</p>
+      <details>
+        <summary style="cursor:pointer; font-family:var(--mono); font-size:12.5px; color:var(--ok); list-style:none;">Read more →</summary>
+        <div style="margin-top:16px; color:var(--text); font-size:14.5px; display:flex; flex-direction:column; gap:12px; max-width:640px;">
+          <p>Coming from a background focused heavily on systems administration and infrastructure—like the Active Directory lab I built last month—I had never actually configured a corporate ticketing architecture until this week. I wanted to see how user incidents flow from initial intake down to root-cause tracking.</p>
+          <p>I spun up a ServiceNow Personal Developer Instance (PDI) and treated it as a deployment sprint, completing the configuration in under 2 days. The layout configurations for standard Incidents came together smoothly, but the real learning happened when I connected the dots across ITIL streams. I grouped a cluster of recurring wireless tickets into a centralized Problem Record, performed root-cause analysis, and pushed it into a formal, risk-assessed Change Request with full roll-back plans.</p>
+          <p><strong>Biggest takeaway:</strong> Enterprise IT support isn't just about knowing how to click 'restart' on a server; it's about structuring a clean, traceable lifecycle so the entire engineering organization can see why things are breaking. Full configuration screenshots and markdown breakdowns are pinned in the <a href="https://github.com/Aryaan314/ServiceNow-Ticketing-System" target="_blank" rel="noopener" style="text-decoration:underline;">GitHub repo</a>. </p>
+        </div>
+      </details>
+
+    <div class="log-entry">
       <div class="log-meta"><span class="log-version">v1.2</span><span class="log-date">Aug 2026</span></div>
       <h3>Building my first Active Directory home lab</h3>
       <p class="diff-add">What went right, what broke during the domain join, and why GPOs are more forgiving than they look.</p>
@@ -692,7 +721,7 @@ setTimeout(typeCommand1, 400);
           <p>I wanted to actually build the thing I'd been reading about, not just pass a quiz on it. So I spun up Windows Server 2022 in VirtualBox and promoted it to a domain controller — which is a fancy way of saying I told a fresh install of Windows Server "you're in charge of a network now."</p>
           <p>The forest and DNS came up cleanly. The DHCP scope was mostly typing in a range and setting a lease time. The part that actually taught me something was joining a Windows 11 client to the domain — it kept failing, and the error messages were vague enough that I had to slow down and check DNS settings on the client instead of the server. Once the client was pointed at the domain controller's IP for DNS, the join went through on the first try.</p>
           <p>After that I built out Organizational Units and user accounts in ADUC, then wrote a Group Policy Object to restrict user-level system access — and validated it actually applied with a manual <code>gpupdate /force</code> rather than just trusting it worked.</p>
-          <p>Biggest takeaway: most of what looks like "networking magic" is just making sure two settings agree with each other. Full write-up and screenshots are in the <a href="https://github.com/Aryaan314/Active-Directory-Home-Lab" target="_blank" rel="noopener" style="text-decoration:underline;">GitHub repo</a>.</p>
+          <p><strong>Biggest takeaway:</strong> most of what looks like "networking magic" is just making sure two settings agree with each other. Full write-up and screenshots are in the <a href="https://github.com/Aryaan314/Active-Directory-Home-Lab" target="_blank" rel="noopener" style="text-decoration:underline;">GitHub repo</a>.</p>
         </div>
       </details>
     </div>
