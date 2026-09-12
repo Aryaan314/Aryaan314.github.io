@@ -160,7 +160,7 @@
     50% { border-color: #00ff66; }
   }
 
-  .hero-ctas{ display:flex; gap:14px; margin-top:28px; flex-wrap:wrap; }
+  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; padding:20px 32px; border-top:1px solid var(--border); background:var(--surface-2); }
   .btn{
     font-family:var(--mono); font-size:14px; font-weight:500; text-decoration:none;
     padding:12px 20px; border-radius:6px; border:1px solid var(--border); transition:all .15s ease;
@@ -400,16 +400,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 3. Type out "$ cat about.txt"
-  function typeCommand3() {let cmdElement = document.getElementById("cmd-3");// Add the cursor class when typing begins on this line
-    if (k === 0) {
-cmdElement.classList.add("terminal-cursor");
-}  if (k < line3Text.length) {
+  function typeCommand3() {let cmdElement = document.getElementById("cmd-3");
+    if (k < line3Text.length) {
 cmdElement.innerHTML += line3Text.charAt(k);
 k++;
 setTimeout(typeCommand3, 100);
 } else {
-// Line finishes typing: remove cursor from command line
-cmdElement.classList.remove("terminal-cursor");
+// Line finishes typing: hide the typing cursor, same as lines 1 and 2
+document.getElementById("cursor-3").style.display = "none";
 
 // Final response prints out
 let responseElement = document.getElementById("response-3");
@@ -477,19 +475,19 @@ setTimeout(typeCommand1, 400);
       </div>
       <div class="terminal-body">
   <!-- Line 1: whoami -->
-  <p class="terminal-row"><span class="prompt">$</span> <span id="cmd-1"></span><span class="active-cursor" id="cursor-1"></span></p>
+  <p class="terminal-row"><span class="prompt">$</span> <span id="cmd-1"></span><span class="cursor" id="cursor-1"></span></p>
   <div id="response-1" class="hidden-block">
     <p class="response-text">Aryaan Sheikh - IT Support & Help Desk</p>
   </div>
   
   <!-- Line 2: status --self -->
-  <p id="row-2" class="terminal-row hidden-block"><span class="prompt">$</span> <span id="cmd-2"></span><span class="active-cursor" id="cursor-2"></span></p>
+  <p id="row-2" class="terminal-row hidden-block"><span class="prompt">$</span> <span id="cmd-2"></span><span class="cursor" id="cursor-2"></span></p>
   <div id="response-2" class="hidden-block">
     <p class="response-text">Open to entry-level IT Support, Help Desk & Desktop Support roles</p>
   </div>
 
   <!-- Line 3: cat about.txt -->
-  <p id="row-3" class="terminal-row hidden-block"><span class="prompt">$</span> <span id="cmd-3"></span><span class="active-cursor" id="cursor-3"></span></p>
+  <p id="row-3" class="terminal-row hidden-block"><span class="prompt">$</span> <span id="cmd-3"></span><span class="cursor" id="cursor-3"></span></p>
   <div id="response-3" class="hidden-block">
     <p class="response-text">BSBA in Information Systems & Technology (UMSL), Google IT Support Certified, and hands-on with Active Directory, ServiceNow (ITSM), Networking, and Enterprise Troubleshooting</p>
      </div>
@@ -498,6 +496,7 @@ setTimeout(typeCommand1, 400);
       <a href="#projects" class="btn btn-primary">View resolved tickets</a>
       <a href="#contact" class="btn btn-ghost">Open a ticket</a>
     </div>
+  </div>
   </div>
 </header>
 
